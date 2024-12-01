@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Duplicate Detection - Matches</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto flex items-center justify-between px-4 py-2">
+            <div class="flex items-center space-x-2">
+                <button class="p-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+                    </svg>
+                </button>
+                <h1 class="text-xl font-bold">TaskDuplicateDetection</h1>
+            </div>
+            <h2 class="text-lg font-bold">Найденные совпадения</h2>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="bg-yellow-50 min-h-screen">
+        <div class="container mx-auto p-6">
+            <!-- Grid of Matches -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Example Card -->
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Металлургическое Изделие 1</h3>
+                    <p class="text-sm text-gray-600 mb-4">Description of item 1 marked for deletion.</p>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="item-1" class="mr-2">
+                        <label for="item-1" class="text-sm text-gray-700">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Металлургическое Изделие 2</h3>
+                    <p class="text-sm text-gray-600 mb-4">Description of item 2 marked for deletion.</p>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="item-2" class="mr-2">
+                        <label for="item-2" class="text-sm text-gray-700">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Металлургическое Изделие 3</h3>
+                    <p class="text-sm text-gray-600 mb-4">Description of item 3 marked for deletion.</p>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="item-3" class="mr-2">
+                        <label for="item-3" class="text-sm text-gray-700">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Металлургическое Изделие 4</h3>
+                    <p class="text-sm text-gray-600 mb-4">Description of item 4 marked for deletion.</p>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="item-4" class="mr-2">
+                        <label for="item-4" class="text-sm text-gray-700">Выбрать</label>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-md p-4 flex flex-col">
+                    <h3 class="text-lg font-bold mb-2">Металлургическое Изделие 5</h3>
+                    <p class="text-sm text-gray-600 mb-4">Description of item 5 marked for deletion.</p>
+                    <div class="flex items-center">
+                        <input type="checkbox" id="item-5" class="mr-2">
+                        <label for="item-5" class="text-sm text-gray-700">Выбрать</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Buttons -->
+            <div class="flex justify-between mt-8">
+                <button class=" text-white px-6 py-2 rounded-lg hover:bg-green-700" style="background-color: #8b8e4d;">Удалить</button>
+                <button class="border border-gray-400 text-gray-700 px-6 py-2 rounded-lg hover:bg-gray-100">Отмена</button>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
