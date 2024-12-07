@@ -6,4 +6,9 @@
   <li><code>pip install virtualenv</code></li>
   <li><code>virtualenv venv</code></li>
   <li><code>pip install -r requirements.txt</code></li>
+  <h3>Запуск фронтенда</h3>
+  <li><code>npm install</code></li>
+  <li><code>npm start</code></li>
+  <h3>Запуск бэкенда</h3>
+  <li><code>python main.py</code></li>
 </ul>
