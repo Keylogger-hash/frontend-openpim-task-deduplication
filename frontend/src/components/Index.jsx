@@ -1,14 +1,40 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
+import { Navigate, useNavigate } from "react-router-dom";
+
 const Index = () => {
     const handleSubmit = (e) => {
       e.preventDefault();
       // Add form submission logic here
     };
-    const [tableOptions] = useState([
-        { value: 'metal', label: 'Металлические изделия' },
-        { value: 'plastic', label: 'Пластиковые изделия' },
-        { value: 'textiles', label: 'Текстильные изделия' },
-    ]);
+    const [tableOptions, setTableOptions] = useState([]);
+    useEffect(() => {
+      const fetchTableOptions = async () => {
+          try {
+              const response = await fetch('http://localhost:8001/tables');
+              const data = await response.json();
+
+              setTableOptions(data);
+          } catch (error) {
+              console.error('Error fetching table options:', error);
+              // Fallback options in case of error
+              // setTableOptions([
+              //     { value: 'metal', label: 'Металлические изделия' },
+              //     { value: 'plastic', label: 'Пластиковые изделия' },
+              //     { value: 'textiles', label: 'Текстильные изделия' },
+              // ]);
+          }
+      };
+      fetchTableOptions();
+      }, []);
+    // const [tableOptions] = useState([
+    //     { value: 'metal', label: 'Металлические изделия' },
+    //     { value: 'plastic', label: 'Пластиковые изделия' },
+    //     { value: 'textiles', label: 'Текстильные изделия' },
+    // ]);
+    const navigate = useNavigate()
+    const handleClick = ()=>{
+      navigate('/reports')
+    }
     return (
       <div className="bg-gray-100 text-gray-800 min-h-screen">
         {/* Navbar */}
@@ -50,6 +76,7 @@ const Index = () => {
                 type="submit"
                 className="w-full text-white rounded-lg py-2"
                 style={{ backgroundColor: '#8b8e4d' }}
+                onClick={handleClick}
               >
                 Запуск
               </button>
