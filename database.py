@@ -3,7 +3,7 @@ import json
 
 # connect to database
 conn = psycopg2.connect(
-    database="openpim", user='test1', password='123', host='176.53.182.224', port= '5432'
+    database="openpim", user='test1', password='123', host='127.0.0.1', port= '5432'
 )
 
 conn.autocommit = True
