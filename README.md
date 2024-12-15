@@ -10,5 +10,9 @@
   <li><code>npm install</code></li>
   <li><code>npm start</code></li>
   <h3>Запуск бэкенда</h3>
-  <li><code>python main.py</code></li>
+  <li><code>python backend/main.py</code></li>
+  <h3>Запуск celery</h3>
+  <li><code>cd backend && celery -A worker.celery worker --loglevel=debug</code></li>
+  <h3>Запуск сервера llm</h3>
+  <li><code>python llm_server/server.py</code></li>
 </ul>
