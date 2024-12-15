@@ -1,0 +1,5 @@
+langchain_huggingface
+accelerate>=0.26.0
+langserve[all]
+psycopg2-binary
+sentence_transformers

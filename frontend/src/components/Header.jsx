@@ -1,4 +1,4 @@
-const Header = () => {
+const Header = ({ totalUniqueItems }) => {
     return (
       <header className="bg-white shadow-md">
         <div className="container mx-auto flex items-center justify-between px-4 py-2">
@@ -10,7 +10,9 @@ const Header = () => {
             </button>
             <h1 className="text-xl font-bold">TaskDuplicateDetection</h1>
           </div>
-          <h2 className="text-lg font-bold">Найденные совпадения</h2>
+          <h2 className="text-lg font-bold">
+            Найденные совпадения: {totalUniqueItems}
+          </h2>
         </div>
       </header>
     );

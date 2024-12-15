@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Reports = () => {
   return (
@@ -10,6 +11,39 @@ const Reports = () => {
 };
 
 const Header = () => {
+  const navigate = useNavigate();
+  const handleStartTask = async () => {
+    try {
+      const response = await fetch('http://localhost:8001/tasks', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          limit: 10
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      const taskId = data["task_id"]
+      console.log('Task started:', data);
+      
+      // Редирект на страницу с отчетами
+      navigate(`/delete-items/${taskId}`);
+      
+      // Или можно перенаправить на страницу ready-for-delete
+      // navigate('/ready-for-delete');
+
+    } catch (error) {
+      console.error('Error starting task:', error);
+      // Здесь можно добавить обработку ошибок, например показать уведомление
+      alert('Ошибка при запуске задачи');
+    }
+  };
   return (
     <header className="bg-white shadow-md">
       <div className="container mx-auto flex items-center justify-between px-4 py-2">
@@ -22,7 +56,7 @@ const Header = () => {
           <h1 className="text-xl font-bold">TaskDuplicateDetection</h1>
         </div>
         <div className="flex space-x-2">
-          <button className="text-white px-4 py-2 rounded-lg hover:bg-green-700" style={{backgroundColor: '#8b8e4d'}}>
+          <button onClick={handleStartTask} className="text-white px-4 py-2 rounded-lg hover:bg-green-700" style={{backgroundColor: '#8b8e4d'}}>
             Запуск задачи
           </button>
           <button className="border border-gray-400 text-gray-700 px-4 py-2 rounded-lg hover:bg-gray-100">
